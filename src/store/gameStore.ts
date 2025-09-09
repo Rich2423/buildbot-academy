@@ -1,10 +1,20 @@
 // src/store/gameStore.ts
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { Component, Challenge, Project, UserProgress, BuildingItem, DifficultyLevel, Achievement } from '@/types';
+import { Component, Challenge, Project, BuildingItem, DifficultyLevel, Achievement } from '@/types';
 
 interface GameState {
-  userProgress: UserProgress;
+  userProgress: {
+    level: DifficultyLevel;
+    unlockedComponents: string[];
+    completedChallenges: string[];
+    projects: Project[];
+    totalPoints: number;
+    joinDate?: Date;
+    currentStreak?: number;
+    longestStreak?: number;
+    totalBuildTime?: number;
+  };
   currentProject: Project | null;
   availableComponents: Component[];
   challenges: Challenge[];
@@ -266,7 +276,7 @@ export const useGameStore = create<GameState>()(
       },
 
       saveProject: () => {
-        const { currentProject, userProgress } = get();
+        const { currentProject } = get();
         if (currentProject) {
           set((state) => ({
             userProgress: {

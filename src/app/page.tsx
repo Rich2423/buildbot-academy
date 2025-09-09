@@ -81,7 +81,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-fredoka text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
-              What You'll Do
+              What You Will Do
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Explore, create, and learn with our interactive STEM activities!

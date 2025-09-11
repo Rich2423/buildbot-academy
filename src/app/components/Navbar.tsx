@@ -50,7 +50,7 @@ export default function Navbar() {
                   <p className="text-xs text-gray-500 font-semibold">Learn • Build • Discover</p>
                   <button
                     onClick={toggleMenu}
-                    className="text-gray-600 hover:text-blue-600 transition-colors p-1"
+                    className="text-gray-600 hover:text-blue-600 transition-colors p-1 rounded-md hover:bg-gray-100"
                     aria-label="Toggle navigation menu"
                   >
                     {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -72,11 +72,11 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Dropdown Navigation Menu */}
+        {/* Cleaner Dropdown Navigation Menu */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-40">
-            <div className="container mx-auto px-4 py-4">
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-xl z-40">
+            <div className="container mx-auto px-6 py-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                 {navigation.map((item) => {
                   const IconComponent = item.icon;
                   const active = isActive(item.href);
@@ -86,19 +86,19 @@ export default function Navbar() {
                       key={item.name}
                       href={item.href}
                       onClick={closeMenu}
-                      className={`flex flex-col items-center justify-center p-4 rounded-xl transition-all duration-200 ${
+                      className={`flex flex-col items-center justify-center p-6 rounded-2xl transition-all duration-200 min-h-[120px] ${
                         active
-                          ? 'text-blue-600 bg-blue-50 border-2 border-blue-200'
-                          : 'text-gray-600 hover:text-blue-500 hover:bg-gray-50 border-2 border-transparent'
+                          ? 'text-blue-600 bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 shadow-lg'
+                          : 'text-gray-600 hover:text-blue-500 hover:bg-gradient-to-br hover:from-gray-50 hover:to-gray-100 border-2 border-gray-200 hover:border-blue-200 hover:shadow-md'
                       }`}
                     >
-                      <div className={`text-2xl mb-2 transform transition-transform duration-200 ${
+                      <div className={`text-3xl mb-3 transform transition-transform duration-200 ${
                         active ? 'scale-110' : 'hover:scale-105'
                       }`}>
                         {item.emoji}
                       </div>
-                      <span className={`text-sm font-semibold transition-colors duration-200 text-center ${
-                        active ? 'text-blue-600' : 'text-gray-600'
+                      <span className={`text-base font-bold transition-colors duration-200 text-center ${
+                        active ? 'text-blue-600' : 'text-gray-700'
                       }`}>
                         {item.name}
                       </span>

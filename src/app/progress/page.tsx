@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft, Trophy, Star, Brain, Target, Clock, Award, Zap, BarChart, TrendingUp } from 'lucide-react';
+import { Trophy, Star, Brain, Target, Clock, Award, Zap, BarChart, TrendingUp } from 'lucide-react';
 
 export default function Progress() {
   const achievements = [
@@ -38,16 +38,11 @@ export default function Progress() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-      {/* Header */}
+      {/* Header - Clean without back button */}
       <div className="bg-white shadow-lg border-b-4 border-green-200">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Link href="/" className="flex items-center space-x-2 text-green-600 hover:text-green-700 transition-colors">
-                <ArrowLeft className="h-6 w-6" />
-                <span className="font-bold">Back to Home</span>
-              </Link>
-              <div className="h-6 w-px bg-gray-300"></div>
               <h1 style={{ fontFamily: 'Fredoka One, cursive' }} className="text-3xl text-gray-800">
                 Your Progress
               </h1>

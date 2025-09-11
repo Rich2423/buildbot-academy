@@ -1,27 +1,24 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import Navbar from '@/components/Navbar'
+'use client'
 
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata = {
-  title: 'BuildBot Academy - Learn STEM & AI Through Building!',
-  description: 'Fun STEM learning game for kids ages 6-13',
-}
+import './globals.css';
+import Navbar from './components/Navbar';
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen font-nunito`}>
+      <body className="font-nunito">
+        {/* Navigation Component */}
         <Navbar />
-        <main className="pt-20">
+        
+        {/* Main Content with bottom padding for fixed nav */}
+        <main className="pb-16">
           {children}
         </main>
       </body>
     </html>
-  )
+  );
 }

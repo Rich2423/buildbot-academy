@@ -1,127 +1,203 @@
 import Link from 'next/link';
-import { Wrench, Trophy, Bot } from 'lucide-react';
+import { Bot, Wrench, Trophy, Brain, Palette, Users, Sparkles, Zap, Star } from 'lucide-react';
 
-export default function HomePage() {
-  const features = [
-    {
-      title: "Build Amazing Robots",
-      description: "Drag and drop parts to create your own robots!",
-      icon: "🤖",
-      color: "bg-blue-100 border-blue-300"
-    },
-    {
-      title: "Solve Fun Challenges",
-      description: "Complete puzzles to unlock new components!",
-      icon: "🧩",
-      color: "bg-yellow-100 border-yellow-300"
-    },
-    {
-      title: "Learn STEM & AI",
-      description: "Discover science, technology, engineering, and math!",
-      icon: "🧠",
-      color: "bg-green-100 border-green-300"
-    },
-    {
-      title: "Show Off Your Creations",
-      description: "Save and share your robot masterpieces!",
-      icon: "⭐",
-      color: "bg-purple-100 border-purple-300"
-    }
-  ];
-
+export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 pt-12 pb-20">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-8">
-            <h1 className="text-5xl md:text-7xl font-fredoka text-white drop-shadow-lg">
-              Welcome to
-              <span className="block text-yellow-300">BuildBot Academy!</span>
-            </h1>
+      <section className="relative overflow-hidden">
+        {/* Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500"></div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-20 left-10 animate-float">
+          <Sparkles className="h-8 w-8 text-yellow-300/70" />
+        </div>
+        <div className="absolute top-32 right-16 animate-bounce-gentle">
+          <Zap className="h-10 w-10 text-pink-300/70" />
+        </div>
+        <div className="absolute bottom-20 left-20 animate-pulse">
+          <div className="w-4 h-4 bg-yellow-300 rounded-full"></div>
+        </div>
+        <div className="absolute top-1/2 right-10 animate-float">
+          <Star className="h-6 w-6 text-purple-300/60" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-6 py-24 text-center">
+          <div className="animate-bounce-gentle">
+            <Bot className="h-24 w-24 text-yellow-300 mx-auto mb-8 drop-shadow-lg" />
+          </div>
+          
+          <h1 style={{ fontFamily: 'Fredoka One, cursive' }} className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 text-shadow leading-tight">
+            Welcome to <span className="text-yellow-300 animate-pulse">BuildBot Academy!</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-white/95 mb-12 max-w-4xl mx-auto font-bold leading-relaxed">
+            Build robots, solve challenges, and learn STEM & AI in the most fun way possible! 
+            <span className="emoji-bounce">🚀</span>
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Link
+              href="/build"
+              className="btn-primary group inline-flex items-center space-x-4"
+            >
+              <Wrench className="h-7 w-7 group-hover:rotate-12 transition-transform duration-300" />
+              <span><span className="emoji-wiggle">🔧</span> Start Building!</span>
+            </Link>
             
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto font-semibold">
-              Build robots, solve challenges, and learn STEM & AI in the most fun way possible!
-            </p>
-
-            <div className="flex justify-center space-x-4 text-6xl animate-bounce">
-              <span className="animate-pulse">🤖</span>
-              <span className="animate-pulse delay-100">⚙️</span>
-              <span className="animate-pulse delay-200">🔧</span>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
-              <Link
-                href="/build"
-                className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-2xl text-xl transition-all duration-200 transform hover:scale-105 hover:shadow-xl flex items-center space-x-2"
-              >
-                <Wrench className="h-6 w-6" />
-                <span>Start Building!</span>
-              </Link>
-              <Link
-                href="/challenges"
-                className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-bold py-4 px-8 rounded-2xl text-xl transition-all duration-200 transform hover:scale-105 border-2 border-white/30 flex items-center space-x-2"
-              >
-                <Trophy className="h-6 w-6" />
-                <span>Try Challenges</span>
-              </Link>
-            </div>
+            <Link
+              href="/challenges"
+              className="btn-secondary group inline-flex items-center space-x-4"
+            >
+              <Trophy className="h-7 w-7 group-hover:animate-bounce" />
+              <span><span className="emoji-bounce">🏆</span> Try Challenges</span>
+            </Link>
           </div>
         </div>
-
-        <div className="absolute top-20 left-10 text-4xl animate-float">⚡</div>
-        <div className="absolute top-32 right-16 text-3xl animate-float delay-1000">🚀</div>
-        <div className="absolute bottom-20 left-20 text-5xl animate-float delay-500">⭐</div>
-        <div className="absolute bottom-32 right-10 text-4xl animate-float delay-1500">🎯</div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-fredoka text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
+      <section className="py-24 bg-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-3">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 25px 25px, #3b82f6 2px, transparent 0)`,
+            backgroundSize: '50px 50px'
+          }}></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-20">
+            <h2 style={{ fontFamily: 'Fredoka One, cursive' }} className="text-5xl md:text-6xl mb-6 text-gray-800">
               What You Will Do
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Explore, create, and learn with our interactive STEM activities!
+            <p className="text-2xl text-gray-600 font-bold max-w-3xl mx-auto">
+              Explore, create, and learn with our interactive STEM activities! 
+              <span className="emoji-float">🎯</span>
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className={`${feature.color} border-4 rounded-3xl p-8 text-center transform hover:scale-105 transition-all duration-200 hover:shadow-xl`}
-              >
-                <div className="text-6xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
-                  {feature.title}
+            {/* Build Amazing Robots */}
+            <div className="card-playful group cursor-pointer">
+              <div className="text-center">
+                <div className="relative mb-6">
+                  <div className="icon-container blue">
+                    <Bot className="h-8 w-8 text-white mx-auto" />
+                  </div>
+                  <div className="absolute -top-2 -right-2">
+                    <span className="text-2xl emoji-wiggle">🤖</span>
+                  </div>
+                </div>
+                <h3 style={{ fontFamily: 'Fredoka One, cursive' }} className="text-2xl mb-4 text-gray-800">
+                  Build Amazing Robots
                 </h3>
-                <p className="text-gray-700 font-medium">
-                  {feature.description}
+                <p className="text-gray-600 font-bold text-lg leading-relaxed">
+                  Drag and drop parts to create your own robots!
                 </p>
               </div>
-            ))}
+            </div>
+
+            {/* Solve Fun Challenges */}
+            <div className="card-playful group cursor-pointer">
+              <div className="text-center">
+                <div className="relative mb-6">
+                  <div className="icon-container orange">
+                    <Trophy className="h-8 w-8 text-white mx-auto" />
+                  </div>
+                  <div className="absolute -top-2 -right-2">
+                    <span className="text-2xl emoji-bounce">🏆</span>
+                  </div>
+                </div>
+                <h3 style={{ fontFamily: 'Fredoka One, cursive' }} className="text-2xl mb-4 text-gray-800">
+                  Solve Fun Challenges
+                </h3>
+                <p className="text-gray-600 font-bold text-lg leading-relaxed">
+                  Complete puzzles to unlock new components!
+                </p>
+              </div>
+            </div>
+
+            {/* Learn STEM & AI */}
+            <div className="card-playful group cursor-pointer">
+              <div className="text-center">
+                <div className="relative mb-6">
+                  <div className="icon-container green">
+                    <Brain className="h-8 w-8 text-white mx-auto" />
+                  </div>
+                  <div className="absolute -top-2 -right-2">
+                    <span className="text-2xl emoji-float">🧠</span>
+                  </div>
+                </div>
+                <h3 style={{ fontFamily: 'Fredoka One, cursive' }} className="text-2xl mb-4 text-gray-800">
+                  Learn STEM & AI
+                </h3>
+                <p className="text-gray-600 font-bold text-lg leading-relaxed">
+                  Discover science, technology, engineering, and math!
+                </p>
+              </div>
+            </div>
+
+            {/* Show Off Your Creations */}
+            <div className="card-playful group cursor-pointer">
+              <div className="text-center">
+                <div className="relative mb-6">
+                  <div className="icon-container pink">
+                    <Palette className="h-8 w-8 text-white mx-auto" />
+                  </div>
+                  <div className="absolute -top-2 -right-2">
+                    <span className="text-2xl emoji-wiggle">🎨</span>
+                  </div>
+                </div>
+                <h3 style={{ fontFamily: 'Fredoka One, cursive' }} className="text-2xl mb-4 text-gray-800">
+                  Show Off Your Creations
+                </h3>
+                <p className="text-gray-600 font-bold text-lg leading-relaxed">
+                  Save and share your robot masterpieces!
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Get Started Section */}
-      <section className="py-20 bg-gradient-to-r from-green-400 to-blue-500">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-fredoka text-white mb-6">
+      {/* CTA Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-teal-500"></div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-10 left-1/4 animate-float">
+          <div className="w-6 h-6 bg-yellow-300 rounded-full opacity-70"></div>
+        </div>
+        <div className="absolute bottom-16 right-1/3 animate-bounce-gentle">
+          <Sparkles className="h-8 w-8 text-pink-300/80" />
+        </div>
+        <div className="absolute top-1/3 left-10 animate-pulse">
+          <Star className="h-6 w-6 text-purple-300/70" />
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-6 text-center">
+          <div className="animate-float mb-8">
+            <Users className="h-20 w-20 text-yellow-300 mx-auto drop-shadow-lg" />
+          </div>
+          
+          <h2 style={{ fontFamily: 'Fredoka One, cursive' }} className="text-5xl md:text-6xl font-bold text-white mb-8 text-shadow leading-tight">
             Ready to Start Your Adventure?
           </h2>
-          <p className="text-xl text-white/90 mb-8 font-semibold">
-            Join thousands of kids learning STEM through building!
+          
+          <p className="text-2xl text-white/95 mb-12 font-bold max-w-3xl mx-auto leading-relaxed">
+            Join thousands of kids learning STEM through building! 
+            <span className="emoji-float">🌟</span>
           </p>
+          
           <Link
             href="/build"
-            className="inline-flex items-center space-x-3 bg-white text-blue-600 font-bold py-4 px-8 rounded-2xl text-xl transition-all duration-200 transform hover:scale-105 hover:shadow-xl"
+            className="btn-cta group inline-flex items-center space-x-4"
           >
-            <Bot className="h-6 w-6" />
-            <span>Build Your First Robot</span>
+            <Bot className="h-8 w-8 group-hover:animate-wiggle transition-transform duration-300" />
+            <span><span className="emoji-bounce">🚀</span> Build Your First Robot</span>
           </Link>
         </div>
       </section>
